@@ -1,13 +1,13 @@
 
    node {
      stage('SCM Checkout'){
-	catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-         //  git 'https://github.com/pradeep720/mvnrepo.git'
-         //  git branch: 'main', url: 'https://github.com/pradeep720/mvnrepo.git'
+	catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+           git 'https://github.com/pradeep720/mvnrepo.git'
+          // git branch: 'main', url: 'https://github.com/pradeep720/mvnrepo.git'
 		
-          //}
-	 //}  	   
-    //stage('SCM Checkout'){
+          }
+	 }  	   
+    stage('SCM Checkout'){
 	    git branch: 'main', url: 'https://github.com/pradeep720/mvnrepo.git'
 	  }
      }
