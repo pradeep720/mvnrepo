@@ -1,7 +1,9 @@
 
    node {
      stage('SCM Checkout'){
-	   git 'https://github.com/pradeep720/mvnrepo.git'
+	catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+           git 'https://github.com/pradeep720/mvnrepo.git'
+          }
 	 }  	   
     stage('SCM Checkout'){
 	    git branch: 'main', url: 'https://github.com/pradeep720/mvnrepo.git'
